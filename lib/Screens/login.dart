@@ -18,9 +18,12 @@ class _LoginState extends State<Login> {
       body:Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.network('https://images.pexels.com/photos/15286/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600'),
-          textfield(text: 'email', isPassword: false,),
-          textfield(text: 'password', isPassword: true,),
+          Expanded(child: Container()),
+          Image.network('https://images.pexels.com/photos/15286/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600')),
+          Expanded(
+            flex: 2,
+              child: textfield(text: 'email', isPassword: false,)),
+          Expanded(child: textfield(text: 'password', isPassword: true,)),
         ],
       ) ,
     );
