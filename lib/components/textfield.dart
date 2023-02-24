@@ -1,32 +1,43 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
-import 'package:untitled/constants.dart' as constant;
+import '../Constants.dart' as constant;
 
 class textfield extends StatelessWidget {
   final String text;
   final bool isPassword;
+
   const textfield({
     super.key,
-    required this.text, required this.isPassword
+    required this.text,
+    required this.isPassword,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: EdgeInsets.all(15.0),
       child: TextField(
-        obscureText: isPassword,
-        decoration: InputDecoration(
-          hintText: text,
-          hintStyle: TextStyle(
-            color: constant.dayPrimary,
-            fontWeight: FontWeight.w500,
-            fontStyle: FontStyle.normal,
-            fontSize: 30.0,
-          ),
-          enabledBorder: OutlineInputBorder(
-
-          ),
+        style: TextStyle(
+          color: constant.dayPrimary,
         ),
+        obscureText: isPassword,
+        obscuringCharacter: '%',
+        decoration: InputDecoration(
+            hintText: text,
+            hintStyle: TextStyle(
+              color: constant.dayPrimary,
+              fontWeight: FontWeight.w500,
+              fontStyle: FontStyle.italic,
+              fontSize: 30.0,
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: constant.dayPrimary,
+                width: 2,
+                style: BorderStyle.solid,
+              ),
+            )),
       ),
     );
   }
